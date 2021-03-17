@@ -1,3 +1,13 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+ 
+
+#Change the name to match your course name
+
+#Example name: Deploy HTML Files to AppService - COURSENAME
+
 name: Deploy HTML Files to AppService - CMST385
 
 on:
@@ -6,21 +16,7 @@ on:
 
     branches:
 
-      - master
-
-jobs:
-
-  build-and-deploy:
-
-    name: Deploy HTML Files to AppService - CMST388
-
-on:
-
-  push:
-
-    branches:
-
-      - master
+      - main
 
 jobs:
 
@@ -28,21 +24,25 @@ jobs:
 
     runs-on: windows-latest
 
-     steps:
+    steps:
 
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
 
     - name: Deploy to Azure Web App
 
       uses: azure/webapps-deploy@v1
 
       with:
-      
-    runs-on: windows-latest
 
-     steps:
+      #Change the app-name to match what was provided to you in the publish settings file, this is in a naming convention of 'COURSENAME-STUDENTUID'
 
-    - uses: actions/checkout@master
+        app-name: 'cmst388-bwalling1'
+
+        slot-name: 'production'
+
+      #Change the publish profile to match what you named your secret setup in GitHub, Example shown below
+
+        publish-profile: ${{ secrets.AppServiceCMST386 }}
 
     - name: Deploy to Azure Web App
 
