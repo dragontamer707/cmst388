@@ -8,7 +8,7 @@
 
 #Example name: Deploy HTML Files to AppService - COURSENAME
 
-name: Deploy HTML Files to AppService - CMST388
+name: Deploy HTML Files to AppService - CMST385
 
 on:
 
@@ -16,7 +16,7 @@ on:
 
     branches:
 
-      - main
+      - master
 
 jobs:
 
@@ -26,7 +26,7 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@main
+    - uses: actions/checkout@master
 
     - name: Deploy to Azure Web App
 
@@ -36,10 +36,10 @@ jobs:
 
       #Change the app-name to match what was provided to you in the publish settings file, this is in a naming convention of 'COURSENAME-STUDENTUID'
 
-        app-name: 'cmst388-bwalling1'
+        app-name: 'cmst385-jsmith9999'
 
         slot-name: 'production'
 
       #Change the publish profile to match what you named your secret setup in GitHub, Example shown below
 
-        publish-profile: ${{ secrets.AppServiceCMST388 }}
+        publish-profile: ${{ secrets.AppServiceCMST385 }}
