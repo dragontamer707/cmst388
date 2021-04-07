@@ -53,15 +53,5 @@ function clicked(obj) {
 	document.getElementById("lrgimg").src=obj.src;	
 }
 
-
-function borderColor(obj){
-	
-	if(numClicks>=1 ){
-		document.getElementById(oldClick).className="thumbDown";
-	} 
-	if(newClick!=oldClick){
-		obj.className= "thumbUp";
-		numClicks++;	
-	}
 	
 }
